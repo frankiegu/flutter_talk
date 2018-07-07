@@ -23,6 +23,7 @@ void isolateMain(int id) {
   // Alternatives include sending logs to a service like Sentry.
   app.logger = new Logger('angel')
     ..onRecord.listen((rec) {
+      if (rec == null) return;
       if (rec.error == null) {
         stdout.writeln(rec);
       } else {
