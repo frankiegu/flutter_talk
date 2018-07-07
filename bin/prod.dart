@@ -28,9 +28,11 @@ void isolateMain(int id) {
         stdout.writeln(rec);
       } else {
         var err = rec.error;
-        if (err is AngelHttpException && err.statusCode != 500) return;
+        if (err == null || err is AngelHttpException && err.statusCode != 500)
+          return;
         var sink = stderr;
-        sink..writeln(rec)..writeln(rec.error)..writeln(rec.stackTrace);
+        sink..writeln(rec)..writeln(rec.error);
+        if (rec.stackTrace != null) sink..writeln(rec.stackTrace);
       }
     });
 
