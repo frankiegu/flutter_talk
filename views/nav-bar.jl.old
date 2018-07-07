@@ -1,0 +1,12 @@
+<element name="nav-bar">
+    <nav class=class>
+        <ul>
+            <li>
+                <a href="/">Flutter Talk</a>
+            </li>
+            <li>
+                <a href="/posts">Newest Posts</a>
+            </li>
+        </ul>
+    </nav>
+</element>
