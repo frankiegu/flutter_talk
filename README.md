@@ -1,65 +1,34 @@
-[![The Angel Framework](https://angel-dart.github.io/images/logo.png)](https://angel-dart.github.io)
+![Flutter talk](web/images/logo.png)
 
-[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/angel_dart/discussion)
-[![Pub](https://img.shields.io/pub/v/angel_framework.svg)](https://pub.dartlang.org/packages/angel_framework)
-[![Build status](https://travis-ci.org/angel-dart/framework.svg?branch=master)](https://travis-ci.org/angel-dart/framework)
-![License](https://img.shields.io/github/license/angel-dart/framework.svg)
+Learn Flutter today, with tutorials, videos, and interactive exercises for the hottest mobile framework.
 
-**Fill out the [v1.0.0 survey](https://docs.google.com/forms/d/e/1FAIpQLSfEgBNsOoi_nYZMmg2IAGyMv1nNaa6B3kUk3QdNJU5987ucVA/viewform?usp=sf_link) now!!!**
+## About
+This is the source code repository for
+[Flutter Talk](https://flutter.thosakwe.com), a new blog about Flutter and everything
+related to Dart.
 
-[Wiki (in-depth documentation)](https://github.com/angel-dart/angel/wiki)
+The site is powered by a simple, Markdown-based blog engine built with the open-source
+[Angel framework](https://angel-dart.github.io) for Dart server-side development.
 
-[API Documentation](http://www.dartdocs.org/documentation/angel_common/latest)
+## Running
+The site should be ready-to-go out of the box; it uses no database, and all functionality
+is Dart-based.
 
-[Roadmap](https://github.com/angel-dart/roadmap/blob/master/ROADMAP.md)
+This project is aimed at version `2.0.0-dev.59.0` of the Dart SDK. I believe that it may
+work up to `2.0.0-dev.61.0` or even further, but the Angel framework is currently blocked on
+several issues in later versions of the Dart SDK, and therefore cannot be updated yet to
+*fully* run on `2.0.0-dev.64.0` and later.
 
-[File an Issue](https://github.com/angel-dart/roadmap/issues)
+## Caching
+You may notice that pages stay completely the same after refresh, and don't change!
+This project makes much of use caching within the HTTP protocol, and via a server-side cache of
+articles.
 
-[Awesome Angel :fire:](https://github.com/angel-dart/awesome-angel)
+All problems can be resolved with a simple restart of the server.
 
-**The Dart server framework that's ready for showtime.**
+## Turbolinks
+In a future release, Turbolinks *may* be added to further speed up the site; however, it
+seems to be incompatible with AdSense, and frankly, this blog needs money to survive.
 
-Angel is a full-featured server-side Web application framework for the Dart programming language. It strives to be a flexible, extensible system, to be easily scalable, and to allow as much code to be shared between clients and servers as possible. Ultimately, I believe that this approach will shorten the time it takes to build a full-stack Web application, from start to finish. [Read more...](https://medium.com/the-angel-framework/announcing-angel-v1-0-0-beta-46dfb4aa8afe)
-
-Like what you see? Please lend us a star. :star:
-
-## Newest Tutorials
-* [Developing RESTful API's with Angel](https://thosakwe.com/developing-restful-apis-with-angel/)
-* [Serving Static Files](https://medium.com/the-angel-framework/serving-static-files-with-the-angel-framework-2ddc7a2b84ae)
-* Use With Angular2 ([article](https://dart.academy/using-angel-with-angular2/) | [video](https://www.youtube.com/watch?v=O8tCXj_lljY&feature=youtu.be))
-
-## Installation & Setup
-*Having errors with a fresh Angel installation? See [here](https://github.com/angel-dart/angel/wiki/Installation-&-Setup) for help.*
-
-Once you have [Dart](https://www.dartlang.org/) installed, bootstrapping a project is as simple as running one shell command:
-
-Install the [Angel CLI](https://github.com/angel-dart/cli):
-
-```bash
-pub global activate angel_cli
-```
-
-Bootstrap a project:
-
-```bash
-angel init hello
-```
-
-You can even have your server run and be *live-reloaded* on file changes:
-
-```bash
-dart bin/dev.dart
-```
-
-Next, check out the [detailed documentation](https://github.com/angel-dart/angel/wiki) to learn to flesh out your project.
-
-## Features
-With features like the following, Angel is the all-in-one framework you should choose to build your next project:
-* [Advanced, Modular Routing](https://github.com/angel-dart/route)
-* [Middleware](https://github.com/angel-dart/angel/wiki/Middleware)
-* [Dependency Injection](https://github.com/angel-dart/angel/wiki/Dependency-Injection)
-* [Strongly-typed ORM](https://github.com/angel-dart/orm)
-* And [much more](https://github.com/angel-dart)...
-
-## Basic Example
-Examples and complete projects can be found in the [angel-example](https://github.com/angel-example) organization.
+Until then, load times should be more than fast enough with the caching functionality already
+in place.
