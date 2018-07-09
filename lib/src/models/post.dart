@@ -22,5 +22,5 @@ abstract class _PostInfo extends Model {
 
   String get htmlContent;
 
-  String get dateString => _fmt.format(updatedAt);
+  String get dateString => _fmt.format(createdAt);
 }

@@ -31,12 +31,13 @@ class PostCacheBuilder {
                 'File for post does not exist: "${markdownFile.absolute
                     .path}"');
           } else {
-            var stat = await markdownFile.stat();
+            var jsonStat = await entity.stat();
+            var markdownStat = await markdownFile.stat();
             var markdownContent = await markdownFile.readAsString();
             post = post.copyWith(
               stub: p.basenameWithoutExtension(entity.path),
-              createdAt: stat.changed,
-              updatedAt: stat.modified,
+              createdAt: jsonStat.changed,
+              updatedAt: markdownStat.modified,
               categories: post.categories ?? [],
               htmlContent: markdown.markdownToHtml(
                 markdownContent,

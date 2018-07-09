@@ -4,10 +4,11 @@
     * [Constant classes are cached](#constant-classes-are-cached)
     * [Classes are their own types](#classes-are-their-own-types)
 * [Redux isn't idiomatic Dart](#redux-isnt-idiomatic-dart)
-* [Not a WebView](#not-a-webview)
+* [Draws its Own Widgets](#draws-its-own-widgets)
 * [No XML syntax](#no-xml-syntax)
 * [Dart has `async` built in](#dart-has-async-built-in)
 * [Conclusion](#conclusion)
+* [Appendix](#appendix)
 
 By now, it would be a surprise if you hadn't heard of
 [Flutter](https://flutter.io), Google's framework for building cross-platform
@@ -200,16 +201,15 @@ Treating Flutter as merely an extension of React in this case will do nothing mo
 than bring in boatloads of confusion to your project, which is probably not favorable for you
 if you're learning Dart for the first time.
 
-## Not a WebView
+## Draws its own Widgets
 Yet another major difference between Flutter and React (both React for the Web
-and React Native) is that while React  is a virtual
-DOM designed to render to HTML, Flutter is a different beast entirely, drawing its own widgets,
-like a game would. This makes it easier to build fast, responsive, UI's, right from the jump,
-as Flutter doesn't have to compensate for the abstraction that the HTML DOM provides.
+and React Native) is that while React by default targets
+OEM widgets, Flutter is a different beast entirely, drawing its own widgets,
+like a game would. This makes it easier to build fast, responsive, UI's, right from the jump.
 
 ## No XML syntax
-As an extension of [the above point](#not-a-webview), Dart has no XML-like syntax,
-because **it is not producing XML or any other markup**.
+Dart has no XML-like syntax,
+because **it is not producing HTML, XML or any other markup**.
 
 For a while, there has been a quite heated discussion open about adding
 a "DSX" syntax to Flutter [[5]], and I highly doubt that it will end throughout the
@@ -335,6 +335,11 @@ To unlock the full power of Flutter, and to continue to be productive with the f
 grows into the future, it's extremely important to understand the nature of the project, and
 use it for what it is, rather than trying to mold it it into practices that don't apply the
 same way in a statically-typed language.
+
+## Appendix
+* July 9th, 2018 - edited a section previously entitled "Not a WebView" that was poorly worded
+and gave some people the impression that React Native rendered to the HTML DOM. The section is
+now titled ["Draws it Own Widgets"](#draws-its-own-widgets).
 
 ## Notes
 This is my first article on this new blog, and my first article about Flutter ever. Hopefully
