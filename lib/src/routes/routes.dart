@@ -168,12 +168,14 @@ http://liftoff.msfc.nasa.gov/2003/06/03.html#item573
       return false;
     });
 
-    var vDir = new VirtualDirectory(
-      app,
-      fileSystem,
-      source: fileSystem.directory('web'),
-    );
-    app.fallback(vDir.handleRequest);
+    if (!app.isProduction) {
+      var vDir = new VirtualDirectory(
+        app,
+        fileSystem,
+        source: fileSystem.directory('web'),
+      );
+      app.fallback(vDir.handleRequest);
+    }
 
     // Throw a 404 if no route matched the request.
     app.fallback((req, res) => throw new AngelHttpException.notFound());
