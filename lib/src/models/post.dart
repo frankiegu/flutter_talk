@@ -4,7 +4,6 @@ import 'package:collection/collection.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 part 'post.g.dart';
-part 'post.serializer.g.dart';
 
 @serializable
 abstract class _PostInfo extends Model {

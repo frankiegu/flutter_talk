@@ -22,14 +22,13 @@ class PostCacheBuilder {
     await for (var entity in directory.list()) {
       if (entity is File) {
         tasks.add(entity.readAsString().then((contents) async {
-          var post = PostInfoSerializer.fromMap(json.decode(contents));
+          var post = PostInfoSerializer.fromMap(json.decode(contents) as Map);
           var markdownFile = directory.childFile(p.join(
               'markdown', p.setExtension(p.basename(entity.path), '.md')));
 
           if (!await markdownFile.exists()) {
             throw new StateError(
-                'File for post does not exist: "${markdownFile.absolute
-                    .path}"');
+                'File for post does not exist: "${markdownFile.absolute.path}"');
           } else {
             var jsonStat = await entity.stat();
             var markdownStat = await markdownFile.stat();

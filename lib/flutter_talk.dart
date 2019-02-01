@@ -12,7 +12,7 @@ import 'src/services/services.dart' as services;
 Future configureServer(Angel app) async {
   var fs = const LocalFileSystem();
 
-  app.use((RequestContext req, ResponseContext res) {
+  app.fallback((req, res) {
     res.renderParams['year'] = new DateTime.now().year;
     res.renderParams['canonical'] = req.path;
     return true;

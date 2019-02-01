@@ -8,7 +8,7 @@ import 'package:logging/logging.dart';
 main() async {
   // Watch the config/ and web/ directories for changes, and hot-reload the server.
   var hot = new HotReloader(() async {
-    var app = new Angel()..lazyParseBodies = true;
+    var app = new Angel();
     app.logger = new Logger('flutter_training');
     var sub = app.logger.onRecord.listen(flutter_talk.prettyLog);
     app.shutdownHooks.add((_) => sub.cancel());

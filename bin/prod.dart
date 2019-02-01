@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:isolate';
 import 'package:angel_framework/angel_framework.dart';
+import 'package:angel_framework/http.dart';
 import 'package:flutter_talk/flutter_talk.dart' as flutter_talk;
 import 'package:logging/logging.dart';
 
@@ -43,7 +44,7 @@ void isolateMain(int id) {
     // This effectively lets us multi-thread the application.
     var http = new AngelHttp.custom(app, startShared);
     var server = await http.startServer(hostname, port);
-    print('Instance #$id listening at http://${server.address.address}:${server
-        .port}');
+    print(
+        'Instance #$id listening at http://${server.address.address}:${server.port}');
   });
 }

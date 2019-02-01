@@ -19,12 +19,14 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
     // Configure our application to render Jael templates from the `views/` directory.
     //
     // See: https://github.com/angel-dart/jael
-    await app.configure(jael(fileSystem.directory('views')));
+    await app
+        .configure(jael(fileSystem.directory('views'), fileExtension: '.jl'));
 
-    app.inject('startTime', new DateTime.now());
+    app.container.registerNamedSingleton<DateTime>('startTime', DateTime.now());
 
-    var postCache = await postCacheBuilder.build(app.logger, fileSystem.directory('posts'));
-    app.container.singleton(postCache);
+    var postCache =
+        await postCacheBuilder.build(app.logger, fileSystem.directory('posts'));
+    app.container.registerSingleton<PostCache>(postCache);
 
     // Apply another plug-ins, i.e. ones that *you* have written.
     //
